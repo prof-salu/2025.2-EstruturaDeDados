@@ -39,6 +39,13 @@ void exibeDados(ListaDinamica *lista){
 	printf("\n");
 }
 
+void liberar(ListaDinamica *lista) {
+    free(lista->elementos);
+    lista->elementos = NULL;
+    lista->tamanho = 0;
+    lista->capacidade = 0;
+}
+
 int main(){
 	//Vantagens
 		//Flexibilidade de tamanho
@@ -67,6 +74,7 @@ int main(){
 	
 	exibeDados(&listaNumeros);
 	
-	free(listaNumeros);
+	liberar(&listaNumeros);
 	
 }
+
